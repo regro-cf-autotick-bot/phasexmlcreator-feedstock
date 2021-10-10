@@ -1,6 +1,6 @@
 {% set name = "phasexmlcreator" %}
-{% set version = "3.0.0" %}
-{% set sha256 = "efa5e323aca9a0e5ef822171b345d04cbebc5ff74aa73ad38c108a327d8139d2" %}
+{% set version = "3.0.1" %}
+{% set sha256 = "0e1bcb87057ee3e61fa9be7b26af25d0dfc325617fb0628db43cc2627f632b7a" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://gitlab.developers.cam.ac.uk/ch/hunter/ssiptools/ssimpleapps/phasexmlcreator/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256:  {{ sha256 }}
+  sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -42,7 +42,7 @@ about:
   license: AGPL-3.0-only
   license_family: AGPL
   license_file: COPYING
-  summary: 'Module for converting SSIP XML descriptions to Phase XML formats.'
+  summary: Module for converting SSIP XML descriptions to Phase XML formats.
   description: |
     Module for the conversion of SSIP XML to phase, solvent and solute XML.
     Part of the SSIPTools suite of tools.
